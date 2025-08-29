@@ -155,13 +155,13 @@ export default function App() {
   return (
     <div
       ref={mainref}
-      className="lg:w-[80%] mx-auto w-full relative z-0 sm:h-[625vh] h-fit  bg-black"
+      className="lg:w-[80%] mx-auto w-full relative z-0 sm:h-[625vh] h-fit overflow-x-hidden bg-black"
     >
       <div
         ref={homeRef}
         id="home"
         style={{ margin: "0 auto" }}
-        className=" relative h-[100vh] z-[5] flex flex-col items-center"
+        className=" relative h-[100vh] z-[5] pb-20 flex flex-col items-center"
       >
         <div
           id="Name"
@@ -169,7 +169,7 @@ export default function App() {
           className="font-bold font-primary absolute z-10 md:text-9xl text-7xl text-[#fff] transition-all ease-in-out select-none duration-700 blink-cursor"
         ></div>
 
-        <ul className="navList flex sm:flex-nowrap flex-wrap z-[10] bottom-16 items-center w-full absolute font-secondary justify-around md:text-xl sm:text-xl text-lg">
+        <ul className="navList flex sm:flex-nowrap flex-wrap z-[10] gap-y-3.5 bottom-16 items-center w-full absolute font-secondary justify-around md:text-xl sm:text-2xl text-xl">
           {navLinks.map((element, index) => (
             <li
               key={index}

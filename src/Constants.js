@@ -142,7 +142,7 @@ export const projects = [
     link: "https://netflix-clone-32.vercel.app",
     desc: "A responsive Netflix Clone built using HTML and Tailwind CSS. This project replicates the sleek UI of Netflix with modern design, including a homepage, sections, and hover effects. The layout is responsive, ensuring a smooth experience across devices. I created this project early in my journey to improve UI skills, focusing on design and responsiveness using Tailwind CSS.",
     github: "https://github.com/Mahesh2-3/NetflixClone",
-    img: "ttps://res.cloudinary.com/dhiluevpk/image/upload/v1756482725/blog_images/zvwa4whnkwbe3yscxhrf.png",
+    img: "https://res.cloudinary.com/dhiluevpk/image/upload/v1756482725/blog_images/zvwa4whnkwbe3yscxhrf.png",
     tech: ["HTML", "TailwindCSS"],
   },
 ];
