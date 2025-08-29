@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-primary: "Lilita One", 'Helvetica Neue', sans-serif;
+    --font-secondary: "Alumni Sans Pinstripe", sans-serif;
+    --font-normal: "Inter", sans-serif;
+    --color-primary: #9c9c9c;
+    --color-secondary: #c7c5c5;
+}
+
+.heading {
+    @apply text-6xl font-secondary font-bold;
+}
+
+.glass-bg {
+    @apply border border-white/20 bg-white/10 p-6 rounded-2xl backdrop-blur-lg;
+}
+
+
+body {
+    color: white;
+    background-color: black;
+
+}
+
+.hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
+html {
+    scroll-behavior: smooth !important;
+    overflow-x: hidden;
+}
+
+#Name {
+    --shadow-x: 0px;
+    --shadow-y: 0px;
+    --shadow-color: #ffff00;
+    text-shadow: var(--shadow-x) var(--shadow-y) 0px var(--shadow-color);
+    transition: text-shadow 0.7s ease-in-out;
+    color: white;
+    -webkit-text-stroke: 1px blue;
+}
+
+.blink-cursor {
+    border-right: 2px solid #000;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        border-color: transparent;
+    }
+}
