@@ -62,7 +62,7 @@ const Projects = () => {
   return (
     <div className="w-full px-15 h-full flex flex-col sm:items-start items-center">
       <h1 className="heading my-20 mb-10 fade-in">My Work</h1>
-      <div className="grow-1 flex flex-wrap gap-10 items-start ">
+      <div className="grow-1 flex sm:justify-start  justify-center flex-wrap gap-10 ">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}

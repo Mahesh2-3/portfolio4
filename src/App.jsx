@@ -16,10 +16,29 @@ export default function App() {
   const mainref = useRef(null);
   const modelRef = useRef(null); // ref for 3D model
   const timeouts = useRef([]);
+
+  // refs for sections
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const experienceRef = useRef(null);
+  const contactRef = useRef(null);
+
   const [showNav, setshowNav] = useState(false);
   const [progress, setprogress] = useState(0);
-  const [height, setheight] = useState(0);
 
+  // store section heights
+  const [sectionHeights, setSectionHeights] = useState({
+    home: 0,
+    about: 0,
+    skills: 0,
+    projects: 0,
+    experience: 0,
+    contact: 0,
+  });
+
+  // Text animation
   const TextAnimation = () => {
     const name = "MAHESH";
     const element = document.getElementById("Name");
@@ -53,17 +72,33 @@ export default function App() {
     }
   };
 
+  // measure section heights dynamically
   useEffect(() => {
-    console.log(window.innerHeight);
+    const updateHeights = () => {
+      setSectionHeights({
+        home: homeRef.current?.clientHeight || 0,
+        about: aboutRef.current?.clientHeight || 0,
+        skills: skillsRef.current?.clientHeight || 0,
+        projects: projectsRef.current?.clientHeight || 0,
+        experience: experienceRef.current?.clientHeight || 0,
+        contact: contactRef.current?.clientHeight || 0,
+      });
+    };
+
+    updateHeights();
+    window.addEventListener("resize", updateHeights);
+
     setTimeout(() => {
       TextAnimation();
     }, 1000);
+
     return () => {
-      // cleanup if component unmounts
       timeouts.current.forEach(clearTimeout);
+      window.removeEventListener("resize", updateHeights);
     };
   }, []);
 
+  // GSAP model animation
   useEffect(() => {
     if (!modelRef.current) return;
 
@@ -74,17 +109,48 @@ export default function App() {
           start: "top top",
           end: "bottom bottom",
           scrub: 1,
-          onUpdate: (self) => {
-            setprogress(self.progress.toFixed(2));
-          },
+          onUpdate: (self) => setprogress(self.progress.toFixed(2)),
         },
       })
-      .to(modelRef.current, { x: "25vw", y: "100vh", ease: "none" })
-      .to(modelRef.current, { x: "-25vw", y: "210vh", ease: "none" })
-      .to(modelRef.current, { x: "25vw", y: "300vh", ease: "none" })
-      .to(modelRef.current, { x: "25vw", y: "400vh", ease: "none" })
-      .to(modelRef.current, { x: "0vw", y: "525vh", ease: "none" });
-  }, []);
+      .to(modelRef.current, {
+        x: "25vw",
+        y: `${sectionHeights.about}px`,
+        ease: "none",
+      })
+      .to(modelRef.current, {
+        x: "-25vw",
+        y: `${sectionHeights.skills + sectionHeights.about}px`,
+        ease: "none",
+      })
+      .to(modelRef.current, {
+        x: "25vw",
+        y: `${
+          sectionHeights.projects + sectionHeights.about + sectionHeights.skills
+        }px`,
+        ease: "none",
+      })
+      .to(modelRef.current, {
+        x: "25vw",
+        y: `${
+          sectionHeights.experience +
+          sectionHeights.about +
+          sectionHeights.skills +
+          sectionHeights.projects
+        }px`,
+        ease: "none",
+      })
+      .to(modelRef.current, {
+        x: "0vw",
+        y: `${
+          sectionHeights.experience +
+          sectionHeights.about +
+          sectionHeights.skills +
+          sectionHeights.projects +
+          sectionHeights.contact
+        }px`,
+        ease: "none",
+      });
+  }, [sectionHeights]);
 
   return (
     <div
@@ -92,6 +158,7 @@ export default function App() {
       className="lg:w-[80%] mx-auto w-full relative z-0 sm:h-[625vh] h-fit  bg-black"
     >
       <div
+        ref={homeRef}
         id="home"
         style={{ margin: "0 auto" }}
         className=" relative h-[100vh] z-[5] flex flex-col items-center"
@@ -125,25 +192,49 @@ export default function App() {
             </li>
           ))}
         </ul>
-        <div ref={modelRef} className="w-full h-full z-[1] relative ">
+        <div
+          ref={modelRef}
+          className="w-full h-full transition-all ease-in-out z-[1] relative "
+        >
           <Canvas style={{ background: "transparent" }} gl={{ alpha: true }}>
             <Character progress={progress} />
           </Canvas>
         </div>
       </div>
-      <section id="about" className="min-h-[100vh] relative z-[5]">
+
+      <section
+        ref={aboutRef}
+        id="about"
+        className="min-h-[100vh] relative z-[5]"
+      >
         <About />
       </section>
-      <section id="skills" className="min-h-[100vh] relative z-[5]">
+      <section
+        ref={skillsRef}
+        id="skills"
+        className="min-h-[100vh] relative z-[5]"
+      >
         <Skills />
       </section>
-      <section id="projects" className="min-h-[125vh relative z-[5]">
+      <section
+        ref={projectsRef}
+        id="projects"
+        className="min-h-[125vh] relative z-[5]"
+      >
         <Projects />
       </section>
-      <section id="experience" className="min-h-[100vh] relative z-[5]">
+      <section
+        ref={experienceRef}
+        id="experience"
+        className="min-h-[100vh] relative z-[5]"
+      >
         <Experience />
       </section>
-      <section id="get-in-touch" className="min-h-[100vh] relative z-[5] ">
+      <section
+        ref={contactRef}
+        id="get-in-touch"
+        className="min-h-[100vh] relative z-[5] "
+      >
         <ContactMe />
       </section>
     </div>

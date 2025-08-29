@@ -90,10 +90,16 @@ function Model({ visible }) {
   // Animate opacity (fade in)
   useEffect(() => {
     if (group.current) {
-      gsap.to(group.current, {
-        opacity: visible ? 1 : 0,
-        duration: 1,
-        ease: "power2.out",
+      group.current.traverse((child) => {
+        if (child.material) {
+          gsap.to(child.material, {
+            opacity: visible ? 1 : 0,
+            duration: 1,
+            ease: "power2.out",
+          });
+          // make sure transparency is enabled
+          child.material.transparent = true;
+        }
       });
     }
   }, [visible]);
