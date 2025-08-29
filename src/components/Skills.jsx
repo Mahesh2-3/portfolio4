@@ -7,11 +7,11 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className="w-full h-full flex flex-col sm:items-end items-center justify-center"
+      className="w-full h-full min-h-screen flex flex-col sm:items-end items-center justify-evenly pb-10"
     >
-      <h1 className="fade-in pr-10 mt-10 w-full text-end heading">Skills</h1>
-      <div className="w-fit p-10 rounded-2xl">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+      <h1 className="fade-in pr-10 w-full text-end heading">Skills</h1>
+      <div className="w-fit flex items-center p-10 rounded-2xl">
+        <div className="grid grid-cols-2 sm:grid-cols-4 sm:gap-12 gap-8">
           {TECH.map((tech) => (
             <div
               key={tech.name}
@@ -20,14 +20,14 @@ const Skills = () => {
             >
               {/* Glow element (behind the card) */}
               <div
-                className="absolute  rounded-xl w-[80px] h-[80px] opacity-0 group-hover:opacity-100 transition duration-500 blur-2xl"
+                className="absolute  rounded-xl w-[80px] h-[80px] opacity-0 sm:group-hover:opacity-100 transition duration-500 sm:blur-2xl"
                 style={{
                   background: tech.color,
                 }}
               ></div>
 
               {/* Actual glass card */}
-              <div className="relative transition-all hover:shadow-[0px_4px_0px_4px_#414141] ease-in-out duration-400 hover:translate-y-[-10px]  w-[120px] h-[120px] rounded-xl border bg-white/10 border-white/20 p-7 flex items-center justify-center">
+              <div className="relative sm:transition-all will-change-transform sm:hover:shadow-[0px_4px_0px_4px_#414141] ease-in-out duration-400 hover:translate-y-[-10px]  w-[120px] h-[120px] rounded-xl border bg-white/10 border-white/20 p-7 flex items-center justify-center">
                 <img
                   src={tech.src}
                   alt={tech.name}

@@ -155,7 +155,7 @@ export default function App() {
   return (
     <div
       ref={mainref}
-      className="lg:w-[80%] mx-auto w-full relative z-0 sm:h-[625vh] h-fit overflow-x-hidden bg-black"
+      className="lg:w-[80%] mx-auto w-full relative z-0 h-fit overflow-x-hidden bg-black"
     >
       <div
         ref={homeRef}
