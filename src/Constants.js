@@ -26,7 +26,7 @@ export const projects = [
     link: "https://bloggin32.vercel.app",
     desc: "Bloggin' is a modern, feature-rich platform that empowers users to create, share, and explore stories. Whether publishing journals, insightful articles, or creative content, Bloggin’ provides a seamless and engaging experience. With secure authentication, a sleek UI, and community features, Bloggin’ ensures your voice reaches the right audience while keeping accounts safe.",
     github: "https://github.com/Mahesh2-3/Bloggin",
-    img: "/Projects/bloggin.png",
+    img: "https://res.cloudinary.com/dhiluevpk/image/upload/v1756482751/blog_images/jebazhqggakufz1ot0ev.png",
     tech: {
       frontend: {
         framework: ["react", "react-dom", "react-router-dom"],
@@ -89,7 +89,7 @@ export const projects = [
     link: "https://todo2-0new.vercel.app/",
     desc: "This is the latest version of our To-Do platform, designed to help you stay organized. You can manage tasks, schedule activities, and maintain a diary — all in one place. The platform is secured with a reliable login system, and you can report issues for quick support.",
     github: "https://github.com/Mahesh2-3/Todo2.0",
-    img: "/Projects/todo.png",
+    img: "https://res.cloudinary.com/dhiluevpk/image/upload/v1756482687/blog_images/jxxfqgs6zpanyobujvke.png",
     tech: {
       frontend: {
         framework: ["next", "react", "react-dom", "react-router-dom"],
@@ -134,7 +134,7 @@ export const projects = [
     link: "https://aot-game32.vercel.app",
     desc: "An Advanced JavaScript-based fan game inspired by the Attack on Titan anime, where you can shoot enemies with a cannonball to protect your base. The game features multiple difficulty modes, score tracking, pause and exit controls, and ends when an enemy successfully breaches your border.",
     github: "https://github.com/Mahesh2-3/AOT-Game",
-    img: "/Projects/aot.jpg",
+    img: "https://res.cloudinary.com/dhiluevpk/image/upload/v1756482773/blog_images/dulw9jh2wxmbvfzyoumt.jpg",
     tech: ["HTML", "CSS", "JavaScript"],
   },
   {
@@ -142,7 +142,7 @@ export const projects = [
     link: "https://netflix-clone-32.vercel.app",
     desc: "A responsive Netflix Clone built using HTML and Tailwind CSS. This project replicates the sleek UI of Netflix with modern design, including a homepage, sections, and hover effects. The layout is responsive, ensuring a smooth experience across devices. I created this project early in my journey to improve UI skills, focusing on design and responsiveness using Tailwind CSS.",
     github: "https://github.com/Mahesh2-3/NetflixClone",
-    img: "/Projects/netflix.png",
+    img: "ttps://res.cloudinary.com/dhiluevpk/image/upload/v1756482725/blog_images/zvwa4whnkwbe3yscxhrf.png",
     tech: ["HTML", "TailwindCSS"],
   },
 ];

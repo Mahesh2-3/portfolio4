@@ -196,9 +196,9 @@ export default function App() {
           ref={modelRef}
           className="w-full h-full transition-all ease-in-out z-[1] relative "
         >
-          <Canvas style={{ background: "transparent" }} gl={{ alpha: true }}>
+          {/* <Canvas style={{ background: "transparent" }} gl={{ alpha: true }}>
             <Character progress={progress} />
-          </Canvas>
+          </Canvas> */}
         </div>
       </div>
 

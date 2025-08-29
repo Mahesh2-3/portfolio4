@@ -74,8 +74,8 @@ const Projects = () => {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
-          <div className="bg-white/10 border backdrop-blur-md border-white/20 p-4 rounded-xl sm:w-[600px] h-[90vh] w-full max-h-[80vh] shadow-2xl">
+        <div className="fixed w-full inset-0 flex items-center justify-center bg-black/60 z-50">
+          <div className="bg-white/10 border backdrop-blur-md border-white/20 p-4 rounded-xl sm:w-[600px] h-[90vh] w-[100vw] max-h-[80vh] shadow-2xl">
             <h2 className="text-xl font-bold mb-4 pl-4">Technologies Used</h2>
             <SyntaxHighlighter
               language="json"
